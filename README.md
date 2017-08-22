@@ -24,7 +24,7 @@ Nothing magical required, if the docker section is complete you would just need 
 pull the repo
 
 ```bash
-$ git clone https://devsecopsron@bitbucket.org/devsecopsron/twittertalk.git
+$ git clone https://github.com/darthvaldr/twittertalk.git
 ```
 
 build it
