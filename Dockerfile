@@ -15,6 +15,9 @@ ADD requirements.txt /requirements.txt
 # install requirements
 RUN pip install -r /requirements.txt
 
+# set PYTHONPATH to find twitter_settings module
+ENV PYTHONPATH /app
+
 # default entrypoint
 ENTRYPOINT ["/usr/local/bin/python", "/app/twittertalk.py"]
 CMD ["/bin/bash"]
