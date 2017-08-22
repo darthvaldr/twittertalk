@@ -8,11 +8,11 @@ Nothing magical required, if the docker section is complete you would just need 
 
 ### Prerequisites
 
-- docker
+* docker installed on your system
+* twitter app account
+	* api & secret keys from this account
+* (optional) a heroku account 
 
-```
-Give examples
-```
 
 ### Installing
 
