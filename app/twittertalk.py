@@ -1,32 +1,38 @@
 # python twitter 'conversation' application
 # summary: read @ messages, respond.
 
-import configparser
+# import configparser
 import json
 
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
 from tweepy import API
+from twitter_settings import *
 
 from nltk.chat import eliza
 
 # read twitter config file
-config = configparser.ConfigParser()
-config.read('twitter.config')
+#config = configparser.ConfigParser()
+#config.read('twitter.config')
 
 # assign keys & secrets
-consumer_key = config.get('APIKEY', 'MY_CONSUMER_KEY')
-consumer_secret = config.get('APIKEY', 'MY_CONSUMER_SECRET')
+#consumer_key = config.get('APIKEY', 'MY_CONSUMER_KEY')
+#consumer_secret = config.get('APIKEY', 'MY_CONSUMER_SECRET')
+
+consumer_key = MY_CONSUMER_KEY
+consumer_secret = MY_CONSUMER_SECRET
 
 # assign token & secret
-access_key = config.get('TOKEN', 'MY_ACCESS_TOKEN_KEY')
-access_secret = config.get('TOKEN', 'MY_ACCESS_TOKEN_SECRET')
+#access_key = config.get('TOKEN', 'MY_ACCESS_TOKEN_KEY')
+#access_secret = config.get('TOKEN', 'MY_ACCESS_TOKEN_SECRET')
+access_key = MY_ACCESS_TOKEN_KEY
+access_secret = MY_ACCESS_TOKEN_SECRET
 
 # assign rule & screen name
-stream_rule = config.get('APP', 'RULE')
-screen_name = config.get('APP', 'SCREEN_NAME').lower()
-user_id = config.get('APP', 'USER_ID')
+stream_rule = RULE
+screen_name = SCREEN_NAME.lower()
+user_id = USER_ID
 
 # setup OAuth connection
 oauth = OAuthHandler(consumer_key, consumer_secret)

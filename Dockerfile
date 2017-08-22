@@ -1,20 +1,20 @@
 #################################################
-# Dockerfile to build Python ebooks twitter app
-# Base : python-2.7.13
+# Dockerfile for TwitterTalk 
+# Base : python-3.6.2
 #################################################
 
-FROM python:2.7.13
+FROM python:3.6.2
 MAINTAINER darthvaldr
 
-# setup where ebooks lives
-RUN mkdir /ebooks
+# add application files to image
+ADD app /app
 
-# add requirements from pwd to image
-# ADD ./requirements.txt /requirements.txt
-ADD ../ebooks /ebooks
+# add requirements file
+ADD requirements.txt /requirements.txt 
 
 # install requirements
-RUN pip install -r /ebooks/requirements.txt
+RUN pip install -r /requirements.txt
 
 # default entrypoint
-ENTRYPOINT ["/usr/local/bin/python", "/ebooks/ebooks.py"]
+ENTRYPOINT ["/usr/local/bin/python", "/app/twittertalk.py"]
+#CMD ["/usr/local/bin/python", "/app/conversation.py"]
