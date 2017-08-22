@@ -1,3 +1,4 @@
 .git
 .idea
-app/twitter.config
+app/twitter_settings.py
+app/*.pyc
