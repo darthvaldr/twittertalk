@@ -28,7 +28,7 @@ $ git clone https://URL-TO-THIS-REPO/twittertalk.git
 ```
 
 *required or the app wont build properly:*
-edit the `twitter_settings.py` file and put your twitter account api and secret keys:
+edit the `twitter_settings.py` file and put your twitter account api and secret keys.
 
 for example:
 ```
