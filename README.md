@@ -24,7 +24,21 @@ Nothing magical required, if the docker section is complete you would just need 
 pull the repo
 
 ```bash
-$ git clone https://github.com/darthvaldr/twittertalk.git
+$ git clone https://URL-TO-THIS-REPO/twittertalk.git
+```
+
+*required or the app wont build properly:*
+edit the `twitter_settings.py` file and put your twitter account api and secret keys.
+
+for example:
+```
+MY_CONSUMER_KEY = ‘XXXXXXXXXXXXXXXXXXXXXXXXX’
+MY_CONSUMER_SECRET = ‘XXXXXXXXXXXXXXXXXXXXXXX’
+MY_ACCESS_TOKEN_KEY = ‘XXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXX’
+MY_ACCESS_TOKEN_SECRET = ‘XXXXXXXXXXXXXXXXXXXXXXXXXX’
+RULE = ‘bot_account_name’
+SCREEN_NAME = ‘bot_screen_name’
+USER_ID = ‘bot_account_name’
 ```
 
 build it
