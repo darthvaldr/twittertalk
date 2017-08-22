@@ -1,6 +1,6 @@
 # Twitter Talk
 
-various implementations of python chatbots using NLTK and doing it through twitter, docker, any other implementations i can think of.
+An implementation of the [eliza chatbot](http://www.nltk.org/_modules/nltk/chat/eliza.html) which i've wrapped in a modified version of Andy Pipers twitter [sample-python-autoreply](https://github.com/twitterdev/sample-python-autoreply) and dockerized it for ease of deployment.
 
 ## Getting Started
 
@@ -13,69 +13,40 @@ Nothing magical required, if the docker section is complete you would just need 
 	* api & secret keys from this account
 * (optional) a heroku account 
 
+### Built with
 
-### Installing
+* Python 3.6
+* NLTK
+* Docker
 
-I'll get back to you on this one...
+### Install / Build
 
-```
-Give the example
-```
+pull the repo
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+```bash
+$ git clone https://devsecopsron@bitbucket.org/devsecopsron/twittertalk.git
 ```
 
-### And coding style tests
+build it
 
-Explain what these tests test and why
-
-```
-Give an example
+```bash
+$ docker build -t twittertalk .
 ```
 
-## Deployment
 
-- heroku
-- docker
+### Run
 
-## Built With
+docker run the app
 
-* python3
-* NLTK chat & chatbot packages
-* twitter API
+```bash
+$ docker run -t twittertalk
+```
 
-## Authors
+### Test?
 
-* **R. AMOSA** - *Re-work of Andy's code + dockerization + deployment*
+sorry, haven't written any tests (really need to get my test-writing game up!) but just go and talk to your bot account and watch it respond with some sh!t.
 
-* **Andy Piper** - *Initial code was all Andy's* - [sample-python-autoreply](https://github.com/twitterdev/sample-python-autoreply)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+### Credits
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Andy Piper - [github](https://github.com/andypiper)
-* NLTK - [docs](http://www.nltk.org/)
-* etc
-
+thanks to Andy Pipers python work saved me time figuring that part out.
