@@ -17,4 +17,4 @@ RUN pip install -r /requirements.txt
 
 # default entrypoint
 ENTRYPOINT ["/usr/local/bin/python", "/app/twittertalk.py"]
-#CMD ["/usr/local/bin/python", "/app/conversation.py"]
+CMD ["/bin/bash"]

@@ -1,7 +1,6 @@
 # python twitter 'conversation' application
 # summary: read @ messages, respond.
 
-# import configparser
 import json
 
 from tweepy.streaming import StreamListener
@@ -12,20 +11,9 @@ from twitter_settings import *
 
 from nltk.chat import eliza
 
-# read twitter config file
-#config = configparser.ConfigParser()
-#config.read('twitter.config')
-
-# assign keys & secrets
-#consumer_key = config.get('APIKEY', 'MY_CONSUMER_KEY')
-#consumer_secret = config.get('APIKEY', 'MY_CONSUMER_SECRET')
-
+# twitter app keys and secrets
 consumer_key = MY_CONSUMER_KEY
 consumer_secret = MY_CONSUMER_SECRET
-
-# assign token & secret
-#access_key = config.get('TOKEN', 'MY_ACCESS_TOKEN_KEY')
-#access_secret = config.get('TOKEN', 'MY_ACCESS_TOKEN_SECRET')
 access_key = MY_ACCESS_TOKEN_KEY
 access_secret = MY_ACCESS_TOKEN_SECRET
 
@@ -50,19 +38,10 @@ chathandler = eliza.Chat(eliza.pairs, eliza.reflections)
 class replyToTweet(StreamListener):
 
     def on_data(self, data):
-        print('=' * 72)
-        print(data)
-        print('='*72)
-
         tweet = json.loads(data.strip())
 
         retweeted = tweet.get('retweeted')
         from_self = tweet.get('user', {}).get('screen_name') == user_id
-
-        print('=' * 72)
-        print(retweeted)
-        print(from_self)
-        print('=' * 72)
 
         if retweeted is not None and not retweeted and not from_self:
             tid = tweet.get('id_str')
@@ -77,10 +56,11 @@ class replyToTweet(StreamListener):
             if len(replyTxt) > 140:
                 replyTxt = replyTxt[0:139] + '...'
 
-            print('Tweet ID: ' + tid)
-            print('From: ' + user_screen)
-            print('Tweet Text: ' + tweetTxt)
-            print('Response Text: ' + replyTxt)
+            # DEBUG:
+            #print('Tweet ID: ' + tid)
+            #print('From: ' + user_screen)
+            #print('Tweet Text: ' + tweetTxt)
+            #print('Response Text: ' + replyTxt)
 
             # send our response
             twitterAPI.update_status(status=replyTxt, in_reply_to_status_id=tid)
