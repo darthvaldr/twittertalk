@@ -47,6 +47,12 @@ $ docker run -t twittertalk
 sorry, haven't written any tests (really need to get my test-writing game up!) but just go and talk to your bot account and watch it respond with some sh!t.
 
 
+### TODO:
+
+* heroku deploy automation (maybe?)
+* a Makefile under /app for ease of re-building
+* easy way to turn DEBUG on/off
+
 ### Credits
 
 thanks to Andy Pipers python work saved me time figuring that part out.
