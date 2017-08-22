@@ -1,4 +1,4 @@
 .git
 .idea
 app/twitter_settings.py
-app/*.pyc
+#app/*.pyc
